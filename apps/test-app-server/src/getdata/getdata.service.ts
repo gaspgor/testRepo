@@ -4,10 +4,10 @@ import { People } from "../getData/People";
 @Injectable()
 export class GetDataService {
   constructor() {}
-  async Add(args: People): Promise<string> {
+  async Add(args: People): Promise<> {
     throw new Error("Not implemented");
   }
-  async People(args: string): Promise<People[]> {
+  async People(args: ): Promise<People[]> {
     throw new Error("Not implemented");
   }
 }

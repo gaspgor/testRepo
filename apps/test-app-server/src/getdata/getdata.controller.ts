@@ -3,6 +3,7 @@ import * as swagger from "@nestjs/swagger";
 import * as errors from "../errors";
 import { GetDataService } from "./getdata.service";
 import { People } from "../getData/People";
+import { Test } from "../getData/Test";
 
 @swagger.ApiTags("getData")
 @common.Controller("getData")
@@ -11,7 +12,7 @@ export class GetDataController {
 
   @common.Post("/add")
   @swagger.ApiOkResponse({
-    type: String
+    type: Test
   })
   @swagger.ApiNotFoundResponse({
     type: errors.NotFoundException
@@ -22,7 +23,7 @@ export class GetDataController {
   async Add(
     @common.Body()
     body: People
-  ): Promise<string> {
+  ): Promise<> {
         return this.service.Add(body);
       }
 
@@ -38,7 +39,7 @@ export class GetDataController {
   })
   async People(
     @common.Body()
-    body: string
+    body: 
   ): Promise<People[]> {
         return this.service.People(body);
       }
